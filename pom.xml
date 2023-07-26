@@ -26,7 +26,7 @@
     <name>Legend SDLC</name>
     <groupId>org.finos.legend.sdlc</groupId>
     <artifactId>legend-sdlc</artifactId>
-    <version>0.135.2-SNAPSHOT</version>
+    <version>0.137.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -69,9 +69,9 @@
         <java.version.range>[11,12),[17,18)</java.version.range>
 
         <!-- Legend dependency versions -->
-        <legend.engine.version>4.16.1</legend.engine.version>
-        <legend.pure.version>4.5.8</legend.pure.version>
-        <legend.shared.version>0.23.7</legend.shared.version>
+        <legend.engine.version>4.19.0</legend.engine.version>
+        <legend.pure.version>4.5.10</legend.pure.version>
+        <legend.shared.version>0.23.8</legend.shared.version>
 
         <!-- Dependency versions -->
         <commons-codec.version>1.15</commons-codec.version>
@@ -566,6 +566,21 @@
             <dependency>
                 <groupId>org.finos.legend.engine</groupId>
                 <artifactId>legend-engine-pure-code-compiled-core</artifactId>
+                <version>${legend.engine.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.antlr</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>jcl-over-slf4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.finos.legend.engine</groupId>
+                <artifactId>legend-engine-language-pure-dsl-generation-pure</artifactId>
                 <version>${legend.engine.version}</version>
                 <exclusions>
                     <exclusion>
